@@ -9,7 +9,7 @@ export class Ancillary {
 
   /**
    * Retrieves the list of supported banks and their codes for a specific country.
-   * 
+   *
    * @param countryCode - ISO Alpha-2 country code (e.g., 'KE').
    * @param options - Optional request-specific configuration.
    * @returns A promise resolving to the list of supported banks.
@@ -21,7 +21,7 @@ export class Ancillary {
 
   /**
    * Retrieves the list of supported mobile wallets and their provider codes for a specific country.
-   * 
+   *
    * @param countryCode - ISO Alpha-2 country code (e.g., 'KE').
    * @param options - Optional request-specific configuration.
    * @returns A promise resolving to the list of supported mobile wallets.

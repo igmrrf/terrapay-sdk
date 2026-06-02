@@ -9,7 +9,7 @@ import type { TerraPayConfig } from './types/index.js';
 /**
  * The main TerraPay SDK entry point.
  * Use this class to access all API modules such as accounts, transactions, and quotations.
- * 
+ *
  * @example
  * ```typescript
  * const sdk = new TerraPay({
@@ -18,7 +18,7 @@ import type { TerraPayConfig } from './types/index.js';
  *   originCountry: 'GB',
  *   environment: 'uat'
  * });
- * 
+ *
  * const balance = await sdk.accounts.getBalance('254700000000');
  * ```
  */
@@ -55,7 +55,7 @@ export class TerraPay {
 
   /**
    * Initializes a new instance of the TerraPay SDK.
-   * 
+   *
    * @param config - Configuration settings for the SDK.
    */
   constructor(config: TerraPayConfig) {

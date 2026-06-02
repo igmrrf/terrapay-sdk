@@ -216,6 +216,13 @@ Available Enums:
 - `BeneficiaryValidationResponseCode`: Statuses for account verification.
 - `GeneralResponseCode`: General routing and validation errors.
 
+## 🤝 Community & Legal
+
+- **Contributing**: Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+- **Code of Conduct**: This project adheres to the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
+- **Security**: If you find a security vulnerability, please follow our [Security Policy](SECURITY.md).
+- **License**: This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 ## 🏗 Development
 
 ```bash

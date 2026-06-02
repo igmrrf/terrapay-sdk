@@ -9,7 +9,7 @@ export class Quotations {
 
   /**
    * Requests a foreign exchange rate for a specific transaction (V1 API).
-   * 
+   *
    * @param data - The quotation request details.
    * @param options - Optional request-specific configuration.
    * @returns A promise resolving to the quotation response.
@@ -20,7 +20,7 @@ export class Quotations {
 
   /**
    * Requests a foreign exchange rate using the V2 API, supporting scheme-specific rates (e.g., VISA, Mastercard).
-   * 
+   *
    * @param data - The quotation request details.
    * @param options - Optional request-specific configuration.
    * @returns A promise resolving to the quotation response.

@@ -15,7 +15,7 @@ export class BaseClient {
 
   /**
    * Initializes the client with configuration and determines the base URL.
-   * 
+   *
    * @param config - The SDK configuration.
    */
   constructor(public readonly config: TerraPayConfig) {
@@ -34,7 +34,7 @@ export class BaseClient {
 
   /**
    * Executes an HTTP request to the TerraPay API with resilience.
-   * 
+   *
    * @template T - The expected response type.
    * @param method - HTTP method (GET, POST, etc.).
    * @param path - API endpoint path (relative to baseUrl).

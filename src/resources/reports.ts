@@ -9,7 +9,7 @@ export class Reports {
 
   /**
    * Retrieves the current balance for all partner ledgers.
-   * 
+   *
    * @param options - Optional request-specific configuration.
    * @returns A promise resolving to the ledger balance report.
    */
@@ -24,7 +24,7 @@ export class Reports {
 
   /**
    * Retrieves the current balance for a specific currency ledger.
-   * 
+   *
    * @param currency - ISO currency code (e.g., 'USD').
    * @param options - Optional request-specific configuration.
    * @returns A promise resolving to the ledger balance report for the currency.

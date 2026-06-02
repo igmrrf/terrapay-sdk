@@ -17,7 +17,7 @@ export class Transactions {
 
   /**
    * Initiates a payout transaction (Remit).
-   * 
+   *
    * @param data - The transaction details including sender and receiver info.
    * @param options - Optional request-specific configuration.
    * @returns A promise resolving to the created transaction response.
@@ -28,7 +28,7 @@ export class Transactions {
 
   /**
    * Retrieves the current status of a transaction using the V3 API.
-   * 
+   *
    * @param transactionReference - The unique reference of the transaction.
    * @param options - Optional request-specific configuration.
    * @returns A promise resolving to the transaction status response.
@@ -43,7 +43,7 @@ export class Transactions {
 
   /**
    * Cancels an initiated transaction that has not yet been credited to the recipient.
-   * 
+   *
    * @param data - The cancellation request details.
    * @param options - Optional request-specific configuration.
    * @returns A promise resolving to the cancellation response.
@@ -62,7 +62,7 @@ export class Transactions {
 
   /**
    * Reverses a successful transfer to return funds to the sender's account.
-   * 
+   *
    * @param data - The reversal request details.
    * @param options - Optional request-specific configuration.
    * @returns A promise resolving to the reversal response.
