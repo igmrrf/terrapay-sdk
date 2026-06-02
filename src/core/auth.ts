@@ -28,7 +28,7 @@ export async function getAuthHeaders(config: TerraPayConfig): Promise<Record<str
     'X-PASSWORD': finalPassword,
     'X-DATE': getUtcTimestamp(),
     'X-ORIGINCOUNTRY': config.originCountry,
-    'User-Agent': 'terrapay-sdk-node/1.0.0',
+    'User-Agent': 'terrapay-js/1.0.1',
     'Content-Type': 'application/json',
   };
 }

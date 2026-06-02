@@ -1,4 +1,4 @@
-# terrapay-sdk
+# terrapay-js
 
 *Disclaimer: Not an official product of TerraPay. Built following official API documentation.*
 A production-grade, type-safe SDK for the TerraPay API, built for high-performance environments.
@@ -17,9 +17,9 @@ This SDK provides a robust, environment-agnostic, and fully-typed interface to T
 ## 📦 Installation
 
 ```bash
-bun add terrapay-sdk
+bun add terrapay-js
 # or
-npm install terrapay-sdk
+npm install terrapay-js
 ```
 
 ## 🛠 Usage
@@ -27,7 +27,7 @@ npm install terrapay-sdk
 ### Initialization
 
 ```typescript
-import { TerraPay } from 'terrapay-sdk';
+import { TerraPay } from 'terrapay-js';
 
 const sdk = new TerraPay({
   username: 'your_username',
@@ -93,7 +93,7 @@ const remit = await sdk.transactions.create({
 TerraPay requires PANs to be RSA encrypted using their public key.
 
 ```typescript
-import { encryptPAN } from 'terrapay-sdk';
+import { encryptPAN } from 'terrapay-js';
 
 const publicKey = `-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----`;
 const encryptedPan = encryptPAN('4111222233334444', publicKey);
@@ -113,7 +113,7 @@ const remit = await sdk.transactions.create({
 We export a `MockTerraPay` class to let you test your application logic without making network calls.
 
 ```typescript
-import { MockTerraPay } from 'terrapay-sdk';
+import { MockTerraPay } from 'terrapay-js';
 
 const mockSdk = new MockTerraPay();
 
@@ -156,6 +156,65 @@ try {
   }
 }
 ```
+
+## 📦 Response Types
+
+The SDK provides fully-typed responses for all API calls, ensuring you have autocompletion and type safety for every field.
+
+### Transaction Response
+When creating or checking the status of a transaction:
+```typescript
+interface TransactionResponse {
+  transactionReference: string; // TerraPay's unique ID
+  transactionStatus: string;    // e.g., 'SUCCESS', 'PENDING'
+  amount: string;
+  currency: string;
+  // ... other fields
+}
+```
+
+### Account Status
+```typescript
+interface AccountStatusResponse {
+  status: 'available' | 'unavailable' | 'unregistered';
+  subStatus?: string;
+}
+```
+
+### Quotation Response
+```typescript
+interface QuotationResponse {
+  quotes: Array<{
+    quoteId: string;
+    fxRate: string;
+    sendingAmount: string;
+    receivingAmount: string;
+    // ...
+  }>;
+}
+```
+
+## 🔢 Response Codes & Enums
+
+The SDK exports enums for all TerraPay API response codes, allowing you to perform type-safe checks on results.
+
+```typescript
+import { RemitResponseCode, BeneficiaryValidationResponseCode } from 'terrapay-js';
+
+const remit = await sdk.transactions.create({ ... });
+
+if (remit.transactionStatus === RemitResponseCode.REMIT_SUCCESS) {
+  // Handle success (code '3000')
+} else if (remit.transactionStatus === RemitResponseCode.REMIT_ACKNOWLEDGED_STATUS_PENDING) {
+  // Handle pending (code '3050')
+}
+```
+
+Available Enums:
+- `RemitResponseCode`: Statuses for remittance execution.
+- `QuoteResponseCode`: Statuses for FX rate requests.
+- `BeneficiaryValidationResponseCode`: Statuses for account verification.
+- `GeneralResponseCode`: General routing and validation errors.
 
 ## 🏗 Development
 
